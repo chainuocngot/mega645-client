@@ -57,12 +57,38 @@ function App() {
         <div>Loading...</div>
       ) : (
         <div>
-          <div style={{ display: "flex", gap: "10px" }}>
-            {generateValidNumbers(data).map((item) => (
-              <span key={item}>{item}</span>
-            ))}
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <a style={{ margin: 0, pointerEvents: "none", fontWeight: 700 }}>
+              Số đẹp
+            </a>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                gap: "10px",
+              }}
+            >
+              {generateValidNumbers(data).map((item) => (
+                <h2
+                  style={{
+                    margin: 0,
+                  }}
+                  key={item}
+                >
+                  {item}
+                </h2>
+              ))}
+            </div>
+            <button
+              onClick={forceUpdate}
+              style={{
+                marginTop: "10px",
+              }}
+            >
+              Số khác
+            </button>
           </div>
-          <button onClick={forceUpdate}>Số khác</button>
+          <br />
           <table>
             <thead>
               <tr>
